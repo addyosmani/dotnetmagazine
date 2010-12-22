@@ -56,7 +56,7 @@ if(getItem(name)){
  $('.cover').eq(getItem(name)).addClass('selected');
  chosenIssue = calcIssue(getItem(name));
  $.blockUI({ 
-            message: '<h3>Welcome Back!. Your Most Recent Favorite Issue Was #' + chosenIssue +'.</h3>', 
+            message: '<h3>Welcome Back!. The Most Recent Issue You Favorited Was #' + chosenIssue +'.</h3>', 
             timeout: 3500 
         }); 
         
