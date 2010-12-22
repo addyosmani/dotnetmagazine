@@ -31,6 +31,15 @@ function calcIssue(selected){
   return latestIssue - selected;
 }
 
+
+/* display the book cover's one at a time */
+$('.cover').each(function(idx) {
+    $(this).delay( idx * 400 ).fadeIn( 100 );
+});		
+
+
+
+
 /* save the index selected to localStorage on cover click*/
 $('.cover').bind('click', function(){
 
@@ -57,7 +66,7 @@ if(getItem(name)){
  chosenIssue = calcIssue(getItem(name));
  $.blockUI({ 
             message: '<h3>Welcome Back!. The Most Recent Issue You Favorited Was #' + chosenIssue +'.</h3>', 
-            timeout: 3500 
+            timeout: 3000 
         }); 
         
 }
