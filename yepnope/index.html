@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+
+<title>YepNope JS Tutorial</title>
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/modernizr-1.6.min.js"></script>
+<script type="text/javascript" src="js/yepnope.js"></script>
+<script type="text/javascript">
+yepnope([
+  {
+    load: ['js/jquery.1.4.4.min.js','js/utils.js'],
+    wait: true
+  },
+  {
+    test: Modernizr.localstorage,
+    yep: ['js/localStorage.js'], 
+    nope: ['js/fallback.js'],
+    wait: true
+  },
+  {
+  load: ['js/jquery.blockUI.js', 'js/app.js'],
+  wait: true
+  }
+]);
+
+</script>
+
+<!-- Styles -->
+<style type="text/css">
+
+ .cover{ border:4px solid transparent; float:left; margin:43px 20px 0px 0px; height:123px;} 
+ .cover img { width:95px; -webkit-box-shadow: 1px 1px 10px #292629; -moz-box-shadow: 1px 1px 10px #292629; box-shadow: 1px 1px 10px #292629;}
+ .cover:hover { border:4px solid blue}
+ .selected { border:4px solid red;}
+ .shelf { width:1024px; height:768px; background:url('images/shelf.jpg') no-repeat; }
+ .level1,.level { margin-left:30px}
+ .level .cover { margin-top:15px;}
+ 
+</style>
+
+</head>
+
+<!-- Body Markup -->
+<body>
+
+<p><h1>YepNope, Modernizr & localStorage Demo For .NET Magazine</h1></p>
+<p>
+ Select your favorite issue below so we can remember it next time.
+</p>
+
+
+<div class="shelf">
+<p>
+
+ <div class="level1">
+  <div class="cover"><img src="images/209.jpg"/></div>
+  <div class="cover"><img src="images/208.jpg"/></div>
+  <div class="cover"><img src="images/207.jpg"/></div>
+  <div class="cover"><img src="images/206.jpg"/></div>
+  <div class="cover"><img src="images/205.jpg"/></div>
+  <div class="cover"><img src="images/204.jpg"/></div>
+  <div class="cover"><img src="images/203.jpg"/></div>
+  <div class="cover"><img src="images/202.jpg"/></div>
+ </div>
+ 
+ <div class="level">
+  <div class="cover"><img src="images/201.jpg"/></div>
+  <div class="cover"><img src="images/200.jpg"/></div>
+  <div class="cover"><img src="images/199.jpg"/></div>
+  <div class="cover"><img src="images/198.jpg"/></div>
+  <div class="cover"><img src="images/197.jpg"/></div>
+  <div class="cover"><img src="images/196.jpg"/></div>
+  <div class="cover"><img src="images/195.jpg"/></div>
+  <div class="cover"><img src="images/194.jpg"/></div>
+  <div class="cover"><img src="images/193.jpg"/></div>
+  <div class="cover"><img src="images/192.jpg"/></div>
+ </div>
+ 
+ 
+ 
+ 
+</p>
+</div>
+
+
+
+</body>
+
+
+</html>
+
+
+
+
+

@@ -1,0 +1,2 @@
+setStatus('localStorage supported');
+

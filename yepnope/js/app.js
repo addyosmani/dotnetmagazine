@@ -1,0 +1,65 @@
+
+
+$(function(){
+
+var name = 'favoriteIssue', data, selected, latestIssue, chosenIssue;
+latestIssue = 209; //latest issue for counter
+
+
+/* add a new key-value pair to localStorage */
+function addItem(key, value){
+  localStorage.setItem(key, value);
+}
+
+/* get a key-based item from localStorage */
+function getItem(key){
+  return localStorage.getItem(key);
+}
+
+/* remove a key-based item from localStorage */
+function removeItem(key){
+ localStorage.removeItem(key);
+}
+
+/* clear data from localStorage */
+function clearItems(){
+  localStorage.clear();
+}
+
+/* get the current issue number*/
+function calcIssue(selected){
+  return latestIssue - selected;
+}
+
+/* save the index selected to localStorage on cover click*/
+$('.cover').bind('click', function(){
+
+    $('.cover').removeClass('selected');
+    selected = $('.cover').index(this);
+    
+    addItem('favoriteIssue', selected); 
+    
+    chosenIssue = calcIssue(selected);
+    $(this).addClass('selected');
+    
+    
+    /* Display modal dialog for 2.5 seconds */
+    $.blockUI({ 
+            message: '<h3>You Favorited Issue #' + chosenIssue +'. <br><br>Reload To See localStorage or the polyfill in action.</h3>', 
+            timeout: 3300 
+        }); 
+        
+});
+
+
+if(getItem(name)){
+ $('.cover').eq(getItem(name)).addClass('selected');
+ chosenIssue = calcIssue(getItem(name));
+ $.blockUI({ 
+            message: '<h3>Welcome Back!. Your Most Recent Favorite Issue Was #' + chosenIssue +'.</h3>', 
+            timeout: 3500 
+        }); 
+        
+}
+
+})();
