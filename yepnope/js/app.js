@@ -32,18 +32,20 @@ function calcIssue(selected){
 }
 
 
+var covers = $('.cover');
+
 /* display the book cover's one at a time */
-$('.cover').each(function(idx) {
+covers.each(function(idx) {
     $(this).delay( idx * 400 ).fadeIn( 100 );
 });		
 
 
 
 /* save the index selected to localStorage on cover click*/
-$('.cover').bind('click', function(){
-
-    $('.cover').removeClass('selected');
-    selected = $('.cover').index(this); 
+covers.live('click', function(){
+    
+    covers.removeClass('selected');
+    selected = covers.index(this); 
       
     addItem('favoriteIssue', selected); 
      
@@ -61,7 +63,7 @@ $('.cover').bind('click', function(){
 
 /* if the item exists in localstorage/polyfill localstorage display the welcome back message*/
 if(getItem(name)){
- $('.cover').eq(getItem(name)).addClass('selected');
+ covers.eq(getItem(name)).addClass('selected');
  chosenIssue = calcIssue(getItem(name));
  $.blockUI({ 
             message: '<h3>Welcome Back!. The Most Recent Issue You Favorited Was #' + chosenIssue +'.</h3>', 
