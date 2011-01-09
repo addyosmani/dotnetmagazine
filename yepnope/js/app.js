@@ -39,7 +39,6 @@ $('.cover').each(function(idx) {
 
 
 
-
 /* save the index selected to localStorage on cover click*/
 $('.cover').bind('click', function(){
 
@@ -51,7 +50,7 @@ $('.cover').bind('click', function(){
     chosenIssue = calcIssue(selected);
     $(this).addClass('selected');   
     
-    /* Display modal dialog for 2.5 seconds */
+    /* Display the modal 'favorited' message */
     $.blockUI({ 
             message: '<h3>You Favorited Issue #' + chosenIssue +'. <br><br>Reload To See localStorage or the polyfill in action.</h3>', 
             timeout: 3300 
@@ -60,6 +59,7 @@ $('.cover').bind('click', function(){
 });
 
 
+/* if the item exists in localstorage/polyfill localstorage display the welcome back message*/
 if(getItem(name)){
  $('.cover').eq(getItem(name)).addClass('selected');
  chosenIssue = calcIssue(getItem(name));
