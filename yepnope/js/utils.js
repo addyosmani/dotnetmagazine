@@ -1,7 +1,7 @@
 
 
-function setStatus(str){
-   $('body').append('Mode Used:' + str);
+function displaySupportNotice(str){
+   $('body').append('LocalStorage support:' + str);
 }
 
 

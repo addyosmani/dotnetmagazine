@@ -1,2 +1,2 @@
-setStatus('localStorage supported');
+displaySupportNotice('localStorage supported');
 

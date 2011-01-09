@@ -4,24 +4,24 @@
 <title>YepNope JS Tutorial</title>
 
 <!-- Load Initial Scripts -->
-<script type="text/javascript" src="js/modernizr-1.6.min.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/yepnope.js"></script>
 
 <!-- Use YepNope To Load Further Dependancies -->
 <script type="text/javascript">
 yepnope([
   {
-    load: ['js/jquery.1.4.4.min.js','js/utils.js'],
+    load: ['js/jquery.js','js/utils.js'],
     wait: true
   },
   {
     test: Modernizr.localstorage,
     yep: ['js/localStorage.js'], 
-    nope: ['js/fallback.js'],
+    nope: ['js/polyfill.js'],
     wait: true
   },
   {
-  load: ['js/jquery.blockUI.js', 'js/app.js'],
+  load: ['js/blockUI.js', 'js/app.js'],
   wait: true
   }
 ]);

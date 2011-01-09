@@ -44,13 +44,12 @@ $('.cover').each(function(idx) {
 $('.cover').bind('click', function(){
 
     $('.cover').removeClass('selected');
-    selected = $('.cover').index(this);
-    
+    selected = $('.cover').index(this); 
+      
     addItem('favoriteIssue', selected); 
-    
+     
     chosenIssue = calcIssue(selected);
-    $(this).addClass('selected');
-    
+    $(this).addClass('selected');   
     
     /* Display modal dialog for 2.5 seconds */
     $.blockUI({ 
